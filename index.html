@@ -13,66 +13,65 @@
   <script defer src="js/accordion.js"></script>
 </head>
 
-<body>
-  <!-- Этап 1. Создайте верстку элементов, которые будут статичны (неизменны).  -->
+<!-- Этап 1. Создайте верстку элементов, которые будут статичны (неизменны).  -->
 
-  <body class="body">
-    <section class="add-student">
-      <div class="container">
-        <div class="accordion" id="accordion-1">
-          <div class="accordion__item">
-            <div class="accordion__header">
-              Добавть студента
-            </div>
-            <div class="accordion__body">
-              <!-- сам аккордеон -->
-              <form class="accordion__form flex">
-                <!-- общий div для двух колонок -->
-                <div class="accordion__blocks-common flex">
-                  <!-- 1я колонка -->
-                  <div class="accordion__form-block flex">
-                    <div class="accordion__input-block flex">
-                      <label class="accordion__label">Фамилия</label>
-                      <input type="text" name="Surmane" id="inputSurmane" class="accordio__input">
-                    </div>
-                    <div class="accordion__input-block flex">
-                      <label class="accordion__label">Имя</label>
-                      <input type="text" name="Name" id="inputName" class="accordio__input">
-                    </div>
-                    <div class="accordion__input-block flex">
-                      <label class="accordion__label">Отчество</label>
-                      <input type="text" name="MiddleName" id="inputMiddleName" class="accordio__input">
-                    </div>
+<body class="body">
+  <section class="add-student">
+    <div class="container">
+      <div class="accordion" id="accordion-1">
+        <div class="accordion__item">
+          <div class="accordion__header">
+            Добавть студента
+          </div>
+          <div class="accordion__body">
+            <!-- сам аккордеон -->
+            <form class="accordion__form flex">
+              <!-- общий div для двух колонок -->
+              <div class="accordion__blocks-common flex">
+                <!-- 1я колонка -->
+                <div class="accordion__form-block flex">
+                  <div class="accordion__input-block flex">
+                    <label class="accordion__label">Фамилия</label>
+                    <input type="text" name="Surmane" id="inputSurmane" class="accordio__input">
                   </div>
-                  <!-- 2я колонка -->
-                  <div class="accordion__form-block flex">
-                    <div class="accordion__input-block flex">
-                      <label class="accordion__label">Дата рождения</label>
-                      <input type="date" name="Birthday" id="inputBirthday" class="accordio__input">
-                    </div>
-                    <div class="accordion__input-block flex">
-                      <label class="accordion__label">Год поступления</label>
-                      <input type="date" name="Year" id="inputYear"
-                        class="accordio__input">
-                    </div>
-                    <div class="accordion__input-block flex">
-                      <label class="accordion__label">Факультет</label>
-                      <input type="text" name="Faculty" id="inputFaculty" class="accordio__input">
-                    </div>
+                  <div class="accordion__input-block flex">
+                    <label class="accordion__label">Имя</label>
+                    <input type="text" name="Name" id="inputName" class="accordio__input">
+                  </div>
+                  <div class="accordion__input-block flex">
+                    <label class="accordion__label">Отчество</label>
+                    <input type="text" name="MiddleName" id="inputMiddleName" class="accordio__input">
                   </div>
                 </div>
-                <!-- конец общего div для двух колонок -->
-                <button class="accordion__btn" id="inputBtn">Добавить студента</button>
-              </form>
-            </div>
+                <!-- 2я колонка -->
+                <div class="accordion__form-block flex">
+                  <div class="accordion__input-block flex">
+                    <label class="accordion__label">Дата рождения</label>
+                    <input type="date" name="Birthday" id="inputBirthday" class="accordio__input" min="1900-01-01">
+                  </div>
+                  <div class="accordion__input-block flex">
+                    <label class="accordion__label">Год поступления</label>
+                    <input type="date" name="Year" id="inputYear" class="accordio__input">
+                  </div>
+                  <div class="accordion__input-block flex">
+                    <label class="accordion__label">Факультет</label>
+                    <input type="text" name="Faculty" id="inputFaculty" class="accordio__input">
+                  </div>
+                </div>
+              </div>
+              <!-- конец общего div для двух колонок -->
+              <button class="accordion__btn" id="inputBtn">Добавить студента</button>
+            </form>
           </div>
         </div>
       </div>
-    </section>
-    <section class="filter-student">
-      <div class="container">
-        <h2 class="h2">Фильтр по</h2>
-        <!-- таблица для фильтра базы -->
+    </div>
+  </section>
+  <section class="filter-student">
+    <div class="container">
+      <h2 class="h2">Фильтр по</h2>
+      <!-- таблица для фильтра базы -->
+      <form action="" id="formFilter">
         <table class="data-students__table-filter">
           <tr class="table__filter flex">
             <td class="table__text table__text_filter flex table__text-surname">
@@ -87,99 +86,104 @@
               <lable class="table__span">Отчество</lable>
               <input type="text" name="middleNameFilter" class="table__input-filter" id="middleNameFilter">
             </td>
-            <td class="table__text table__text_filter flex table__text-birthday">
-              <lable class="table__span">Дата рождения</lable>
-              <input type="date" name="dateFilter" class="table__input-filter" id="dateFilter">
-            </td>
             <td class="table__text table__text_filter flex table__text-year">
               <lable class="table__span">Год поступления</lable>
-              <input type="date" name="yearFilter" class="table__input-filter" id="yearFilter">
+              <input type="number" name="yearFilter" class="table__input-filter" id="yearFilter">
+            </td>
+            <td class="table__text table__text_filter flex table__text-year">
+              <lable class="table__span">Год окончания</lable>
+              <input type="number" name="yearFilter" class="table__input-filter" id="yearEndFilter">
             </td>
             <td class="table__text table__text_filter flex table__text-faculty">
               <lable class="table__span">Факультет</lable>
               <input type="text" name="facultyFilter" class="table__input-filter" id="facultyFilter">
             </td>
           </tr>
-        </table>
-        <!-- конец таблицы -->
-      </div>
-    </section>
-    <section class="data-students">
-      <div class="container">
-        <h2 class="h2 table__name">База данных студентов</h2>
-        <table class="data-students__table" id="tableBase">
           <tr>
-            <td class="table__text table__text-surname">
-              <span class="table__span" id="surname">Фамилия</span>
-              <button class="btn-sort" id="btnSortSurname">
-                <svg width="10px" height="10px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#1C274C" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#1C274C" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </td>
-            <td class="table__text table__text-name">
-              <span class="table__span" id="name">Имя</span>
-              <button class="btn-sort" id="btnSortName">
-                <svg width="10px" height="10px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#1C274C" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#1C274C" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </td>
-            <td class="table__text table__text-middlename">
-              <span class="table__span" id="middleName">Отчество</span>
-              <button class="btn-sort" id="btnSortMiddleName">
-                <svg width="10px" height="10px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#1C274C" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#1C274C" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </td>
-            <td class="table__text table__text-birthday">
-              <span class="table__span" id="birthday">Дата рождения</span>
-              <button class="btn-sort" id="btnSortBirthday">
-                <svg width="10px" height="10px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#1C274C" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#1C274C" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </td>
-            <td class="table__text table__text-year">
-              <span class="table__span" id="year">Год поступления</span>
-              <button class="btn-sort" id="btnSortYear">
-                <svg width="10px" height="10px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#1C274C" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#1C274C" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </td>
-            <td class="table__text table__text-faculty">
-              <span class="table__span" id="faculty">Факультет</span>
-              <button class="btn-sort" id="btnSortFaculty">
-                <svg width="10px" height="10px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#1C274C" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#1C274C" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
+            <td class="table__text">
+              <button id="btnRefrash">Сбросить фильтры</button>
             </td>
           </tr>
         </table>
-      </div>
-    </section>
-  </body>
+      </form>
+      <!-- конец таблицы -->
+    </div>
+  </section>
+  <section class="data-students">
+    <div class="container">
+      <h2 class="h2 table__name">База данных студентов</h2>
+      <table class="data-students__table" id="tableBase">
+        <tr>
+          <td class="table__text table__text-surname table__text_first-td">
+            <span class="table__span" id="surname">Фамилия</span>
+            <button class="btn-sort" id="btnSortSurname">
+              <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#1C274C" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#1C274C" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </td>
+          <td class="table__text table__text-name table__text_first-td">
+            <span class="table__span" id="name">Имя</span>
+            <button class="btn-sort" id="btnSortName">
+              <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#1C274C" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#1C274C" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </td>
+          <td class="table__text table__text-middlename table__text_first-td">
+            <span class="table__span" id="middleName">Отчество</span>
+            <button class="btn-sort" id="btnSortMiddleName">
+              <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#1C274C" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#1C274C" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </td>
+          <td class="table__text table__text-birthday table__text_first-td">
+            <span class="table__span" id="birthday">Дата рождения</span>
+            <button class="btn-sort" id="btnSortBirthday">
+              <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#1C274C" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#1C274C" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </td>
+          <td class="table__text table__text-year table__text_first-td">
+            <span class="table__span" id="year">Год поступления</span>
+            <button class="btn-sort" id="btnSortYear">
+              <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#1C274C" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#1C274C" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </td>
+          <td class="table__text table__text-faculty table__text_first-td">
+            <span class="table__span" id="faculty">Факультет</span>
+            <button class="btn-sort" id="btnSortFaculty">
+              <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#1C274C" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#1C274C" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
 </body>
 
 </html>
